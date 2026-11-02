@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f4ff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: white;
+            width: 440px;
+            margin: 180px auto;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        h2 { font-size: 20px; margin-top: 0; }
+        .input-area { display: flex; gap: 8px; }
+        #taskInput {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 7px;
+        }
+        button { cursor: pointer; padding: 8px 12px; }
+        #addButton {
+            background-color: #3478f6;
+            color: white;
+            border: none;
+            border-radius: 7px;
+        }
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #666666;
+        }
+        .filters button {
+            border: none;
+            background: none;
+            color: #444444;
+        }
+        .filters button.active {
+            background-color: #e8efff;
+            color: #3478f6;
+            border-radius: 5px;
+        }
+        ul { list-style: none; padding: 0; margin-top: 10px; }
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 5px;
+            border-top: 1px solid #eeeeee;
+        }
+        li span { flex: 1; }
+        li.completed span {
+            text-decoration: line-through;
+            color: #999999;
+        }
+        .deleteButton {
+            border: none;
+            background: none;
+            color: #999999;
+        }
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eeeeee;
+            padding-top: 10px;
+            font-size: 13px;
+            color: #666666;
+        }
+        .bottom button { font-size: 12px; padding: 5px; }
+        .editInput { flex: 1; padding: 6px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Todo App</h2>
+        <div class="input-area">
+            <input type="text" id="taskInput" placeholder="What needs doing?">
+            <button id="addButton">Add</button>
+        </div>
+
+        <div class="options">
+            <span>Tip: double-click a todo to edit. Press Enter to save.</span>
+            <div class="filters">
+                <button class="active" data-filter="all">All</button>
+                <button data-filter="active">Active</button>
+                <button data-filter="completed">Completed</button>
+            </div>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="bottom">
+            <span id="itemsLeft">0 items left</span>
+            <div>
+                <button id="clearCompleted">Clear completed</button>
+                <button id="clearAll">Clear all</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load the JavaScript file generated from app.ts -->
+    <script src="app.js"></script>
+</body>
+</html>
